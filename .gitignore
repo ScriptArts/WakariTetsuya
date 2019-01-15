@@ -2,8 +2,8 @@
 .DS_Store
 
 ## Environment normalization:
-/.bundle/
-/vendor/bundle
+/.bundle
+/vendor
 /lib/bundler/man/
 
 # Config
