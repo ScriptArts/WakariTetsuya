@@ -13,7 +13,7 @@ bot.message do |event|
   author_id = event.author.id
   if author_id == !config['client_id']
     return
-  elsif event.content == 'わかる'
+  elsif event.content =~ /.*わかる.*/
     wakaru = [
       'https://media.mkta.pw/wakaritetsuya/wakaru/2CEL3AYmv8e5.jpg',
       'https://media.mkta.pw/wakaritetsuya/wakaru/3uCgq1Cgj1fX.jpg',
@@ -31,7 +31,7 @@ bot.message do |event|
       'https://media.mkta.pw/wakaritetsuya/wakaru/UA7Xg9W1VAqN.jpg'
     ]
     event.send_message(wakaru.shuffle.shuffle.shuffle.sample)
-  elsif event.content == 'わからない'
+  elsif event.content =~ /.*わからない.*/
     wakaranai = [
       'https://media.mkta.pw/wakaritetsuya/wakaranai/paFNbrjg9Pq5.jpg',
       'https://media.mkta.pw/wakaritetsuya/wakaranai/QI0r7HfzK1bu.jpg'
