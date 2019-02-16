@@ -15,20 +15,20 @@ bot.message do |event|
     return
   elsif event.content =~ /.*わかる.*/
     wakaru = [
-      'https://media.mkta.pw/wakaritetsuya/wakaru/2CEL3AYmv8e5.jpg',
-      'https://media.mkta.pw/wakaritetsuya/wakaru/3uCgq1Cgj1fX.jpg',
-      'https://media.mkta.pw/wakaritetsuya/wakaru/6i13A1lNDbl6.jpg',
-      'https://media.mkta.pw/wakaritetsuya/wakaru/9XQoPgNL22UT.jpg',
-      'https://media.mkta.pw/wakaritetsuya/wakaru/9ysrgyhaDF42.png',
-      'https://media.mkta.pw/wakaritetsuya/wakaru/b1VCm39ptA2X.jpg',
-      'https://media.mkta.pw/wakaritetsuya/wakaru/HZd7BNTExtLm.jpg',
-      'https://media.mkta.pw/wakaritetsuya/wakaru/JokPZNWleJ4W.jpg',
-      'https://media.mkta.pw/wakaritetsuya/wakaru/lqzpoh3TtO6F.jpg',
-      'https://media.mkta.pw/wakaritetsuya/wakaru/myn3tvaQ8G6r.jpg',
-      'https://media.mkta.pw/wakaritetsuya/wakaru/PBvjYl2QFAJS.jpg',
-      'https://media.mkta.pw/wakaritetsuya/wakaru/RcSwa3cDTjfg.jpg',
-      'https://media.mkta.pw/wakaritetsuya/wakaru/tuvFpye24VwT.jpg',
-      'https://media.mkta.pw/wakaritetsuya/wakaru/UA7Xg9W1VAqN.jpg'
+      'https://media.makotia.me/wakaritetsuya/wakaru/2CEL3AYmv8e5.jpg',
+      'https://media.makotia.me/wakaritetsuya/wakaru/3uCgq1Cgj1fX.jpg',
+      'https://media.makotia.me/wakaritetsuya/wakaru/6i13A1lNDbl6.jpg',
+      'https://media.makotia.me/wakaritetsuya/wakaru/9XQoPgNL22UT.jpg',
+      'https://media.makotia.me/wakaritetsuya/wakaru/9ysrgyhaDF42.png',
+      'https://media.makotia.me/wakaritetsuya/wakaru/b1VCm39ptA2X.jpg',
+      'https://media.makotia.me/wakaritetsuya/wakaru/HZd7BNTExtLm.jpg',
+      'https://media.makotia.me/wakaritetsuya/wakaru/JokPZNWleJ4W.jpg',
+      'https://media.makotia.me/wakaritetsuya/wakaru/lqzpoh3TtO6F.jpg',
+      'https://media.makotia.me/wakaritetsuya/wakaru/myn3tvaQ8G6r.jpg',
+      'https://media.makotia.me/wakaritetsuya/wakaru/PBvjYl2QFAJS.jpg',
+      'https://media.makotia.me/wakaritetsuya/wakaru/RcSwa3cDTjfg.jpg',
+      'https://media.makotia.me/wakaritetsuya/wakaru/tuvFpye24VwT.jpg',
+      'https://media.makotia.me/wakaritetsuya/wakaru/UA7Xg9W1VAqN.jpg'
     ]
     event.send_message(wakaru.shuffle.shuffle.shuffle.sample)
   elsif event.content =~ /.*わからない.*/
