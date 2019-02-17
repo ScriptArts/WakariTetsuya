@@ -33,8 +33,8 @@ bot.message do |event|
     event.send_message(wakaru.shuffle.shuffle.shuffle.sample)
   elsif event.content =~ /.*わからない.*/
     wakaranai = [
-      'https://media.mkta.pw/wakaritetsuya/wakaranai/paFNbrjg9Pq5.jpg',
-      'https://media.mkta.pw/wakaritetsuya/wakaranai/QI0r7HfzK1bu.jpg'
+      'https://media.makotia.me/wakaritetsuya/wakaranai/paFNbrjg9Pq5.jpg',
+      'https://media.makotia.me/wakaritetsuya/wakaranai/QI0r7HfzK1bu.jpg'
     ]
     event.send_message(wakaranai.shuffle.shuffle.shuffle.sample)
   end
