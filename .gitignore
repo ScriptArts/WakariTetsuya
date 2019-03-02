@@ -8,3 +8,6 @@
 
 # Config
 config.yml
+
+# db
+redis
