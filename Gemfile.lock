@@ -25,6 +25,7 @@ GEM
       ffi
     rbnacl (3.4.0)
       ffi
+    redis (4.1.0)
     rest-client (2.1.0.rc1)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -43,6 +44,7 @@ PLATFORMS
 
 DEPENDENCIES
   discordrb
+  redis
 
 BUNDLED WITH
    1.17.2
