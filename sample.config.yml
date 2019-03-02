@@ -1,4 +1,8 @@
-token: ''
-prefix: ''
-client_id: ''
-playing: ''
+discord:
+  token: ''
+  prefix: ''
+  client_id: ''
+  playing: ''
+redis:
+  db_host: ''
+  db_port: ''
