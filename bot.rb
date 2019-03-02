@@ -1,18 +1,40 @@
 require 'yaml'
 require 'json'
+require 'redis'
 require 'discordrb'
 
 config = YAML.load_file('config.yml')
-bot = Discordrb::Commands::CommandBot.new token: config['token'], client_id: config['client_id'], prefix: config['prefix']
+bot = Discordrb::Commands::CommandBot.new token: config['discord']['token'], client_id: config['discord']['client_id'], prefix: config['discord']['prefix']
+redis = Redis.new host: config['redis']['db_host'], port: config['redis']['db_port']
 
 bot.ready do
   bot.game = config['playing']
 end
 
+bot.command :mute do |event|
+  status = redis.get event.channel.id
+  if status != 'mute'
+    redis.set event.channel.id, 'mute'
+    event.send_message "#{event.channel.name}(id: #{event.channel.id})を無視するようになりました"
+  else
+    event.send_message 'このチャンネルは既にミュートされています'
+  end
+end
+
+bot.command :unmute do |event|
+  status = redis.get event.channel.id
+  if status == 'mute'
+    redis.del event.channel.id
+    event.send_message "#{event.channel.name}(id: #{event.channel.id})でのわかる監視を開始しました"
+  else
+    event.send_message 'このチャンネルはミュートされていません'
+  end
+end
+
 bot.message do |event|
   author_id = event.author.id
-  if author_id == !config['client_id']
-    return
+  status = redis.get event.channel.id
+  if author_id == !config['client_id'] || status == 'mute'
   elsif event.content =~ /.*わかる.*/
     wakaru = [
       'https://media.makotia.me/wakaritetsuya/wakaru/2CEL3AYmv8e5.jpg',
