@@ -8,7 +8,7 @@ bot = Discordrb::Commands::CommandBot.new token: config['discord']['token'], cli
 redis = Redis.new host: config['redis']['db_host'], port: config['redis']['db_port']
 
 bot.ready do
-  bot.game = config['playing']
+  bot.game = config['discord']['playing']
 end
 
 bot.command :mute do |event|
@@ -34,7 +34,7 @@ end
 bot.message do |event|
   author_id = event.author.id
   status = redis.get event.channel.id
-  if author_id == !config['client_id'] || status == 'mute'
+  if author_id == !config['discord']['client_id'] || status == 'mute'
   elsif event.content =~ /.*わかる.*/
     wakaru = [
       'https://media.makotia.me/wakaritetsuya/wakaru/2CEL3AYmv8e5.jpg',
