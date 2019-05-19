@@ -62,4 +62,10 @@ bot.message do |event|
   end
 end
 
+bot.reaction_add do |event|
+  if event.message.author.id.to_i == config['discord']['client_id'].to_i
+    event.message.delete
+  end
+end
+
 bot.run
