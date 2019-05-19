@@ -63,7 +63,7 @@ bot.message do |event|
 end
 
 bot.reaction_add do |event|
-  if event.message.author.id.to_i == config['discord']['client_id'].to_i
+  if event.message.author.id.to_i == config['discord']['client_id'].to_i && (event.emoji.name == "🤛" || event.emoji.name == "🤜")
     event.message.delete
   end
 end
