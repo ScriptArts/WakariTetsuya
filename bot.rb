@@ -59,6 +59,11 @@ bot.message do |event|
       'https://media.makotia.me/wakaritetsuya/wakaranai/QI0r7HfzK1bu.jpg'
     ]
     event.send_message(wakaranai.shuffle.shuffle.shuffle.sample)
+  elsif event.content =~ /.*せやな.*/
+    seyana = [
+      'https://media.makotia.me/wakaritetsuya/seyana/bog5sheiyooB.png'
+    ]
+    event.send_message(seyana.shuffle.shuffle.shuffle.sample)
   end
 end
 
